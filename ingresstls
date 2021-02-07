@@ -1,0 +1,7 @@
+$ openssl req -x509 -nodes -days 365 -newkey rsa:4048 -keyout /xxxx/wordpress.io.key -out /xxx/worpdpress.io.crt -subj "/CN=www.worpress.io/O=www.wordpress.io"
+
+
+Création d'un secret qui se nomme "pki" et qui aura la clé privée et le certificat.
+
+> kubectl create secret tls pki --key wodpress.io.key --cert wodpress.io.crt
+
