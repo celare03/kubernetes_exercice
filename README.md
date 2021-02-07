@@ -18,3 +18,19 @@ Vous trouverez ci-dessous les diffénts opérateurs que nous allons utiliser:
 Nous créerons:
 - deux déploiments (mysql et wordpress)
 - un persistent volume pour persister les données au niveau de MYSQL (FACULTATIF)
+
+## Persistent Volume :
+Créer un persistent volume (demande de 2Gi)
+Vous avez le choix de créer :
+- un persisent volume puis ensuite un persistantVolumeClaim ou de créer directement un persistentVolumeClaim via une storageClassName
+ 
+ Dans notre exemple, nous créeons directement un PERSISTENTVOLUMECLAIM lié à une STORAGE CLASS.
+ 
+ ## SERVICE
+ 
+ Créer un service pour chaque déploiment
+ 
+| Deploiment     |     2 header    |  
+| ------------- |: -------------: | 
+| WORDPRESS      |     nodeport          |    
+| MYSQL       |        clusterIP       |      
