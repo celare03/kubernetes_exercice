@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-wordpress
+spec:
+  tls:
+  - hosts:
+    - www.anthony.io
+  rules:
+    - host: www.anthony.io
+      http:
+        paths:
+          - backend:
+              serviceName: svc-wordpress
+              servicePort: 9080

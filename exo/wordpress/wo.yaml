@@ -1,0 +1,55 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: cm-wordpress
+data:
+  WORDPRESS_DB_HOST: svc-mysql
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: s-wordpress
+data:
+  WORDPRESS_DB_PASSWORD: cGxydHNwYQ==
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-wordpress
+spec:
+  selector:
+    app: wordpress
+  type: NodePort
+  ports:
+  - port: 9080
+    targetPort: 80
+    nodePort: 30090
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+      - name: wordpress
+        image: wordpress:4.9-apache
+        env:
+        - name: WORDPRESS_DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: cm-wordpress
+              key: WORDPRESS_DB_HOST
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: s-wordpress
+              key: WORDPRESS_DB_PASSWORD
