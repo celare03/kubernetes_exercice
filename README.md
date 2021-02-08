@@ -27,7 +27,7 @@ Vous avez le choix de créer :
  Dans notre exemple, nous créeons directement un PERSISTENTVOLUMECLAIM lié à une STORAGE CLASS.
  
  ## SERVICE 
- voir fichiers!
+ voir fichiers:
  - svc-wordpress.yaml
  - svc-mysql.yaml
  
@@ -47,6 +47,21 @@ kubectl apply -f svc-wordpress.yaml
 kubectl apply -f svc-mysql.yaml
 ```
 
+## Configmap
+voir fichier cmAndSecret.txt
+Pour éviter d'entrer les informations manuellement dans le fichier yaml, nous créeons un configMap.
+Au lieu d'utiliser un fichier YAML, nous utiliserons l'écriture impérative.
+
+```shell
+kubectl create configmap generic cm_wordpress --from-literal=WORDPRESS_DB_HOST=mysql
+```
+
+## Secret
+### WORDPRESS_DB_PASSWORD
+kubectl create secret generic s-mysql --from-literal=MYSQL_ROOT_PASSWORD=plrtspa
+
+### MYSQL_ROOT_PASSWORD
+kubectl create secret generic s-wordpress --from-literal=WORDPRESS_DB_PASSWORD=plrtspa
 
 ## Deploiment
 
