@@ -78,6 +78,11 @@ Lancer la commande:
 ``` shell
 kubectl apply -f mysql.yaml --record
 ```
+#### Vérification de l'historique de déploiment
+
+```shell
+kubectl rollout history deployment.v1.apps/mysql -n dev
+``` 
 
 ### WORDPRESS
 Version: **wordpress:4.9-apache**.
@@ -91,6 +96,7 @@ Dans le déploiement, nous ajouterons:
 Lancer la commande:
 ``` shell
 kubectl apply -f wordpress.yaml --record
+kubectl rollout history deployment.v1.apps/wordpress -n dev
 ```
 
 
