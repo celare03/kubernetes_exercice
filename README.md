@@ -45,7 +45,7 @@ Lancer la commande:
 ``` shell
 kubectl apply -f svc-wordpress.yaml
 kubectl apply -f svc-mysql.yaml
-``
+```
 
 
 ## Deploiment
@@ -58,7 +58,7 @@ Pour la création du déploiment, nous utiliserons la commande --record pour vis
 Lancer la commande:
 ``` shell
 kubectl apply -f wordpress.yaml --record
-``
+```
 
 ### MYSQL
 Version: **5.7**
@@ -68,4 +68,4 @@ Pour la création du déploiment, nous utiliserons la commande --record pour vis
 Lancer la commande:
 ``` shell
 kubectl apply -f mysql.yaml --record
-``
+```
