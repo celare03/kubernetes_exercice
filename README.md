@@ -31,6 +31,6 @@ Vous avez le choix de créer :
  Créer un service pour chaque déploiment
  
 | Deploiment     |     2 header    |  
-| -------------  |: -------------: | 
+| -------------  | -------------   | 
 | WORDPRESS      |     nodeport    |    
 | MYSQL          |     clusterIP   |      
