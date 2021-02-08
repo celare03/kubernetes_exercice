@@ -22,6 +22,10 @@ Nous créerons:
 ## Nampespace (namespace.txt)
 Créer le namespace dev
 
+```shell
+kubectl create namespace dev
+```
+
 ## Persistent Volume :
 Créer un persistent volume (demande de 2Gi)
 Vous avez le choix de créer :
