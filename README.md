@@ -3,8 +3,8 @@
 Le but de cet exercice est de s'entrainer avec les commandes kubectl.
 
 Vous pouvez faire cet exercice avec votre cluster kubernetes local (MINIKUBE), avec RANCHER ou tout autre cluster KUBERNETES.
-Pour les autres cluster KUBERNETES, je ne pourrais pas vous aider car je n'ai pas d'expérience.
 
+Cet exemple a éré réalisé avec MINIKUBE.
 # Créer une application WORDPRESS
 Vous trouverez ci-dessous les diffénts opérateurs que nous allons utiliser:
 
