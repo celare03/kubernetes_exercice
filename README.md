@@ -96,7 +96,10 @@ Dans le déploiement, nous ajouterons:
 Lancer la commande:
 ``` shell
 kubectl apply -f wordpress.yaml --record
-kubectl rollout history deployment.v1.apps/wordpress -n dev
 ```
 
+#### Vérification de l'historique de déploiment
+```shell
+kubectl rollout history deployment.v1.apps/wordpress -n dev
+```
 
