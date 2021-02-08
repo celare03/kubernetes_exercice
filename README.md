@@ -26,14 +26,46 @@ Vous avez le choix de créer :
  
  Dans notre exemple, nous créeons directement un PERSISTENTVOLUMECLAIM lié à une STORAGE CLASS.
  
- ## SERVICE (voir fichier)
+ ## SERVICE 
+ voir fichiers!
+ - svc-wordpress.yaml
+ - svc-mysql.yaml
  
  Créer un service pour chaque déploiment
  
-| Deploiment     |     2 header    |  
-| -------------  | -------------   | 
-| WORDPRESS      |     nodeport    |    
-| MYSQL          |     clusterIP   |      
+| Deploiment     |   type de port  | Port |  
+| -------------  | :-------------: |      |
+| WORDPRESS      |     nodeport    |33090 |  
+| MYSQL          |     clusterIP   |3306  |    
+
+Dans cet exemple, la base de données ne sera pas accessible à l'extérieur du cluster KUBERNETES
+Nous pourrons accéder à WORDPRESS à l'extérieur du cluster à partir du nodeport
+
+Lancer la commande:
+``` shell
+kubectl apply -f svc-wordpress.yaml
+kubectl apply -f svc-mysql.yaml
+``
 
 
 ## Deploiment
+
+### WORDPRESS
+Version: **wordpress:4.9-apache**.
+Si vous le souhaitez, vous pouvez utiliser une autre version.
+Pour la création du déploiment, nous utiliserons la commande --record pour visualiser l'historique
+
+Lancer la commande:
+``` shell
+kubectl apply -f wordpress.yaml --record
+``
+
+### MYSQL
+Version: **5.7**
+Si vous le souhaitez, vous pouvez utiliser une autre version.
+Pour la création du déploiment, nous utiliserons la commande --record pour visualiser l'historique
+
+Lancer la commande:
+``` shell
+kubectl apply -f mysql.yaml --record
+``
