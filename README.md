@@ -19,6 +19,9 @@ Nous créerons:
 - deux déploiments (mysql et wordpress)
 - un persistent volume pour persister les données au niveau de MYSQL (FACULTATIF)
 
+## Nampespace (namespace.txt)
+Créer le namespace dev
+
 ## Persistent Volume :
 Créer un persistent volume (demande de 2Gi)
 Vous avez le choix de créer :
