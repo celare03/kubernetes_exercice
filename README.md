@@ -103,3 +103,14 @@ kubectl apply -f wordpress.yaml --record
 kubectl rollout history deployment.v1.apps/wordpress -n dev
 ```
 
+## Acces à l'application
+Lancer la commande ci-dessous pour récupérer l'adresse du cluster MINIKUBE
+
+```shell
+minikube ip
+```
+Ouvrir votre navigateur et indiquer l'adresse de la commande ci-dessus:
+
+http://minikupe_ip:svc_wodpress
+
+Il faut remplacer les variables par les valeurs des variables. 
