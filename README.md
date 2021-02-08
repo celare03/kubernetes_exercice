@@ -27,6 +27,12 @@ kubectl create namespace dev
 ```
 
 ## Persistent Volume :
+Nous utilisons le storageclass **standard** de minikube.
+Pour connaitre les storagesclass, lancer la commande:
+```shell
+kubectl get sc 
+```
+
 Créer un persistent volume (demande de 2Gi)
 Vous avez le choix de créer :
 - un persisent volume puis ensuite un persistantVolumeClaim ou de créer directement un persistentVolumeClaim via une storageClassName
