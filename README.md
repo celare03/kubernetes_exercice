@@ -34,7 +34,7 @@ Vous avez le choix de créer :
  Créer un service pour chaque déploiment
  
 | Deploiment     |   type de port  | Port |  
-| -------------  | :-------------: |      |
+| -------------  | -------------   |:---: |
 | WORDPRESS      |     nodeport    |33090 |  
 | MYSQL          |     clusterIP   |3306  |    
 
