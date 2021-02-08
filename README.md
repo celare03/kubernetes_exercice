@@ -4,7 +4,10 @@ Le but de cet exercice est de s'entrainer avec les commandes kubectl.
 
 Vous pouvez faire cet exercice avec votre cluster kubernetes local (MINIKUBE), avec RANCHER ou tout autre cluster KUBERNETES.
 
+
 Cet exemple a éré réalisé avec MINIKUBE.
+
+
 # Créer une application WORDPRESS
 Vous trouverez ci-dessous les diffénts opérateurs que nous allons utiliser:
 
@@ -19,7 +22,22 @@ Nous créerons:
 - deux déploiments (mysql et wordpress)
 - un persistent volume pour persister les données au niveau de MYSQL (FACULTATIF)
 
+
+## Nampespace (namespace.txt)
+Créer le namespace dev
+
+```shell
+kubectl create namespace dev
+```
+
 ## Persistent Volume :
+Nous utilisons le storageclass **standard** de minikube.
+Pour connaitre les storagesclass, lancer la commande:
+```shell
+kubectl get sc 
+```
+
+
 Créer un persistent volume (demande de 2Gi)
 Vous avez le choix de créer :
 - un persisent volume puis ensuite un persistantVolumeClaim ou de créer directement un persistentVolumeClaim via une storageClassName
@@ -78,11 +96,13 @@ Lancer la commande:
 ``` shell
 kubectl apply -f mysql.yaml --record
 ```
+
 #### Vérification de l'historique de déploiment
 
 ```shell
 kubectl rollout history deployment.v1.apps/mysql -n dev
 ``` 
+
 
 ### WORDPRESS
 Version: **wordpress:4.9-apache**.
@@ -97,6 +117,7 @@ Lancer la commande:
 ``` shell
 kubectl apply -f wordpress.yaml --record
 ```
+
 
 #### Vérification de l'historique de déploiment
 ```shell
@@ -114,3 +135,4 @@ Ouvrir votre navigateur et indiquer l'adresse de la commande ci-dessus:
 http://minikupe_ip:svc_wodpress
 
 Il faut remplacer les variables par les valeurs des variables. 
+=======
