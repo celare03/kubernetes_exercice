@@ -26,7 +26,7 @@ Vous avez le choix de créer :
  
  Dans notre exemple, nous créeons directement un PERSISTENTVOLUMECLAIM lié à une STORAGE CLASS.
  
- ## SERVICE
+ ## SERVICE (voir fichier)
  
  Créer un service pour chaque déploiment
  
@@ -34,3 +34,6 @@ Vous avez le choix de créer :
 | -------------  | -------------   | 
 | WORDPRESS      |     nodeport    |    
 | MYSQL          |     clusterIP   |      
+
+
+## Deploiment
