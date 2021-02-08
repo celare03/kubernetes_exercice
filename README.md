@@ -73,6 +73,7 @@ Pour la création du déploiment, nous utiliserons la commande --record pour vis
 Dans le déploiement, nous ajouterons:
 - PVC (si créé)
 - SECRET
+
 Lancer la commande:
 ``` shell
 kubectl apply -f mysql.yaml --record
