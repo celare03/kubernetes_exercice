@@ -65,22 +65,31 @@ kubectl create secret generic s-wordpress --from-literal=WORDPRESS_DB_PASSWORD=p
 
 ## Deploiment
 
+### MYSQL
+Version: **5.7**
+Si vous le souhaitez, vous pouvez utiliser une autre version.
+Pour la création du déploiment, nous utiliserons la commande --record pour visualiser l'historique
+
+Dans le déploiement, nous ajouterons:
+- PVC (si créé)
+- SECRET
+Lancer la commande:
+``` shell
+kubectl apply -f mysql.yaml --record
+```
+
 ### WORDPRESS
 Version: **wordpress:4.9-apache**.
 Si vous le souhaitez, vous pouvez utiliser une autre version.
 Pour la création du déploiment, nous utiliserons la commande --record pour visualiser l'historique
+
+Dans le déploiement, nous ajouterons:
+- CONFIGMAP
+- SECRET
 
 Lancer la commande:
 ``` shell
 kubectl apply -f wordpress.yaml --record
 ```
 
-### MYSQL
-Version: **5.7**
-Si vous le souhaitez, vous pouvez utiliser une autre version.
-Pour la création du déploiment, nous utiliserons la commande --record pour visualiser l'historique
 
-Lancer la commande:
-``` shell
-kubectl apply -f mysql.yaml --record
-```
