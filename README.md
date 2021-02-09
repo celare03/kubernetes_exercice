@@ -4,7 +4,15 @@ Le but de cet exercice est de s'entrainer avec les commandes kubectl.
 
 Vous pouvez faire cet exercice avec votre cluster kubernetes local (MINIKUBE), avec RANCHER ou tout autre cluster KUBERNETES.
 
-Cet exemple a éré réalisé avec MINIKUBE.
+Cet exemple a été réalisé avec MINIKUBE.
+
+
+# Installation de KUBECTL
+voir le lien [kubectl](https://kubernetes.io/fr/docs/tasks/tools/install-kubectl/)
+
+# Installation de MINIKUBE
+Voir le lien [minikube](https://kubernetes.io/fr/docs/tasks/tools/install-minikube/)
+
 # Créer une application WORDPRESS
 Vous trouverez ci-dessous les diffénts opérateurs que nous allons utiliser:
 
@@ -113,4 +121,4 @@ Ouvrir votre navigateur et indiquer l'adresse de la commande ci-dessus:
 
 http://minikupe_ip:svc_wodpress
 
-Il faut remplacer les variables par les valeurs des variables. 
+Il faut remplacer les variables par les valeurs retournées 
