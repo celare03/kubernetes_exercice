@@ -135,9 +135,14 @@ Lancer la commande ci-dessous pour récupérer l'adresse du cluster MINIKUBE
 ```shell
 minikube ip
 ```
+
+Pour récupérer le port du service svc-wordpress du namespace *dev*:
+```shell
+kubect get services -n dev
+```
 Ouvrir votre navigateur et indiquer l'adresse de la commande ci-dessus:
 
 http://minikupe_ip:svc_wodpress
 
-Il faut remplacer les variables par les valeurs des variables. 
-=======
+Il faut remplacer les variables par les valeurs retournées.
+
