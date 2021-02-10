@@ -4,7 +4,14 @@ Le but de cet exercice est de s'entrainer avec les commandes kubectl.
 
 Vous pouvez faire cet exercice avec votre cluster kubernetes local (MINIKUBE), avec RANCHER ou tout autre cluster KUBERNETES.
 
+
 Cet exemple a été réalisé avec MINIKUBE.
+
+# Installation de KUBECTL
+voir le lien [kubectl](https://kubernetes.io/fr/docs/tasks/tools/install-kubectl/)
+
+# Installation de MINIKUBE
+Voir le lien [minikube](https://kubernetes.io/fr/docs/tasks/tools/install-minikube/)
 
 # Créer une application WORDPRESS
 Vous trouverez ci-dessous les diffénts opérateurs que nous allons utiliser:
@@ -20,6 +27,7 @@ Nous créerons:
 - deux déploiments (mysql et wordpress)
 - un persistent volume pour persister les données au niveau de MYSQL (FACULTATIF)
 
+
 ## Nampespace (namespace.txt)
 Créer le namespace dev
 
@@ -33,6 +41,7 @@ Pour connaitre les storagesclass, lancer la commande:
 ```shell
 kubectl get sc 
 ```
+
 
 Créer un persistent volume (demande de 2Gi)
 Vous avez le choix de créer :
@@ -93,6 +102,13 @@ Lancer la commande:
 kubectl apply -f mysql.yaml --record
 ```
 
+#### Vérification de l'historique de déploiment
+
+```shell
+kubectl rollout history deployment.v1.apps/mysql -n dev
+``` 
+
+
 ### WORDPRESS
 Version: **wordpress:4.9-apache**.
 Si vous le souhaitez, vous pouvez utiliser une autre version.
@@ -108,3 +124,20 @@ kubectl apply -f wordpress.yaml --record
 ```
 
 
+#### Vérification de l'historique de déploiment
+```shell
+kubectl rollout history deployment.v1.apps/wordpress -n dev
+```
+
+## Acces à l'application
+Lancer la commande ci-dessous pour récupérer l'adresse du cluster MINIKUBE
+
+```shell
+minikube ip
+```
+Ouvrir votre navigateur et indiquer l'adresse de la commande ci-dessus:
+
+http://minikupe_ip:svc_wodpress
+
+Il faut remplacer les variables par les valeurs des variables. 
+=======
