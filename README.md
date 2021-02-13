@@ -146,3 +146,18 @@ http://minikupe_ip:svc_wodpress
 
 Il faut remplacer les variables par les valeurs retournées.
 
+## ERREUR
+Lors du lancement du deploiement de MYSQL, dans les logs de la console ou via la commande:
+``` shell
+kubectl log <nomPod> -n dev
+```
+ vous avez l'erreur *** [Entrypoint] MySQL Docker Image 5.7.21-1.1.3
+[Entrypoint] Initializing database
+2018-06-14T20:59:11.481713Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+2018-06-14T20:59:11.484034Z 0 [ERROR] --initialize specified but the data directory has files in it. Aborting.
+2018-06-14T20:59:11.484087Z 0 [ERROR] Aborting ***
+
+Créer un pod debug qui accédera au pvc (voir pod my-pvc-debugger.yaml)
+Dans le pvc, vous trouverez un dossier qui se nomme "lost+found".
+Supprimer-le et relancer le déploiement.
+
